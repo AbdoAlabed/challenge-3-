@@ -1,0 +1,12 @@
+body {
+	background: #0073aa;
+}
+
+#myInfo header {
+	font-family: monospace, cursive;
+}
+
+input {
+	width: 100%;
+	height: 40px;
+}
