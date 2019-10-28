@@ -24,13 +24,40 @@ var employeeC = employee("Sara", 150);
 
 
 //create a function when invoked returns the name of that employee.
-
+function employee1(name, salary) {
+	var employee=[employeeA, employeeB,employeeC];
+    return {
+    	employe : function(name, salary)
+        name: name,
+        salary: salary
+    },
+    	sayMyName: function(employee){
+    		return employee[name];
+    	}
+}
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
 
 
 //now modify that closure and add a function that says hello to the employee name;
-
+function employee1(name, salary) {
+	var employee=[employeeA, employeeB,employeeC];
+    return {
+    	employe : function(name, salary)
+        name: name,
+        salary: salary
+    },
+    	sayMyName: function(employee) {
+    		return employee[name];
+    	},
+    	sayHello: function(employee) {
+    		return 'hello'+ employee[name];
+    	}
+    	increaseSalary: function(employee){
+    		employe.salary= employe.salary + 50 ;
+    		return "your salary is 150%"
+    	}
+}
 // employeeA.sayHello(); // hello jack
 // employeeB.sayHello(); // hello Mark
 
@@ -69,10 +96,18 @@ var employeeC = employee("Sara", 150);
 
 
 // Write your code here .....
+	function pet(name, type, age) {
+		return {
+			name:name,
+			type:type,
+			age: age
+		}
+
+	}
 
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
-
+// yes I am
 //=============================================================================
 /*                                  Q3                                       */
 //=============================================================================
@@ -102,8 +137,14 @@ function reduce(array, f, acc) {
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
 // Write your code here .....
-
-
+function maximum(array){
+	return reduce(array, function(acc, num){
+		if(num>acc){
+			return num;
+		}
+		return acc;
+	});
+}
 
 
 //================================================================================
@@ -130,8 +171,8 @@ function reduce(array, f, acc) {
 
 // 2. Connect jQuery library to the HTML file.
 
-// 3. Write javascript function when user type text inside the input text and click the "Add" 
-//     button it will add the text to the ul element.
+// 3.
+var txt= Document.getElementByName('tapeHere');
 
 
 
