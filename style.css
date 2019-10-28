@@ -1,0 +1,20 @@
+// Create css file and link it to your HTML file, and write css code for the following: 
+//     a. Change the background color for the whole page.
+//     b. Change the font family for the header of the page.  
+//     c. Enlarge the input text (both: width & height).
+
+body {
+	background-color: red;
+}
+
+header {
+	font-family: italic;
+}
+input text {
+	margin: 20px;
+	padding: 10px;
+	color: red;
+	border-color: pink;
+	width: 20px;
+	height: 20px ;
+}
