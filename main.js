@@ -25,6 +25,11 @@ var employeeC = employee("Sara", 150);
 
 //create a function when invoked returns the name of that employee.
 
+function sayMyName(){
+    var that=this;
+    return that.name
+}
+
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
 
@@ -34,11 +39,30 @@ var employeeC = employee("Sara", 150);
 // employeeA.sayHello(); // hello jack
 // employeeB.sayHello(); // hello Mark
 
+function sayHello(){
+    return "hello " + this.name
+}
+
 //modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
 //employeeA.increaseSalary(50); // "your salary is 150$"
 
+
+function increaseSalary(n){
+
+    this.salary= this.salary+n;
+
+    return "your salary is "+this.salary
+}
+
+
 //how about we let jack and mark meet togther!
 //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
+
+function addFreind(obj){
+    this.freinds = [],
+    this.friends.push(obj.name)
+    return "you just became friend with " + obj.name
+}
 
 // employeeA.addFriend(employeeB); // "you just became friend with Mark"
 // employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
@@ -46,6 +70,10 @@ var employeeC = employee("Sara", 150);
 //modify your closure to tell mark how many friends does he have.
 
 // employeeA.listFriends(); // "you have 2 friends"
+
+function listFriends(){
+    return "you have " + this.friends.length + "frinds"
+}
 
 
 //=============================================================================
@@ -72,6 +100,8 @@ var employeeC = employee("Sara", 150);
 
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+
+//Yes I am
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -102,6 +132,14 @@ function reduce(array, f, acc) {
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
 // Write your code here .....
+
+
+function max(acc, element, i){
+    if (element>acc){
+        return element
+    }
+
+}
 
 
 
