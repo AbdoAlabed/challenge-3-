@@ -1,0 +1,11 @@
+body{
+	background-color: gray;
+}
+h1{
+	font-family: Times-New-Roman;
+}
+input{
+	width: 200px;
+	height: 100px;
+}
+
