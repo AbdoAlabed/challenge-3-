@@ -22,9 +22,20 @@ var employeeA = employee("jack", 100);
 var employeeB = employee("Mark", 200);
 var employeeC = employee("Sara", 150);
 
+function employee(name, salary) {
+    for each(salary, function(name) {
+        return employee;
+    })
+
+}
 
 //create a function when invoked returns the name of that employee.
-
+var employee = [employeeA, employeeB, employeeC]
+function sayMyName(name) {
+    for (var i = 0; i < employee.length; i++) {
+    }
+    return employee[name];
+}
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
 
@@ -69,7 +80,12 @@ var employeeC = employee("Sara", 150);
 
 
 // Write your code here .....
-
+function pet(name) {
+    this.name = {
+        first : first
+    }
+    return name;
+}
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
 
@@ -113,6 +129,20 @@ function reduce(array, f, acc) {
 // you can only use MDN as a resource in case you need one (https://developer.mozilla.org/en-US/docs/Learn/HTML). 
  // 1-Create a new html file called html_yourname.html and do the following:
 
+ <!DOCTYPE html>
+ <html>
+ <div id="myInfo">
+ <head>HTML is Eazy</head>
+ <title> My easy Assessment</title>
+ <p>HyperText Markup Language (HTML) is the standard markup language for creating web pages and web applications.</p>
+ <input type="text">
+ <button>add</button>
+</div>
+ <style>
+ <line>horizontal</line>
+ </style>
+ 
+</html>
  //    a. Change the title to : My easy Assessment.
  //    d. Add horizital line.
  //    e. Create a new div with id myInfo.
