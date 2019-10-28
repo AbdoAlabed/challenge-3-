@@ -1,0 +1,12 @@
+body {
+	background-color : cyan 
+}
+
+h1 {
+	font-family: cursive
+}
+
+input {
+	width : 300,
+	height : 500;
+}
