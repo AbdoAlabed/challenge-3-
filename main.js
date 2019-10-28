@@ -14,7 +14,19 @@
 function employee(name, salary) {
     return {
         name: name,
-        salary: salary
+        salary: salary,
+        sayMyName: function(){return name},
+        sayHello: function(){return "hello "+ name} ,
+        increaseSalary : function(x){
+             salary = salary + x ;
+             return "your salary is "+ salary+"$" ;
+        },
+        addFriend : function(object){
+            return "you just became friend with "+object.name
+
+        }
+
+
     }
 }
 
@@ -27,6 +39,8 @@ var employeeC = employee("Sara", 150);
 
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
+ 
+ 
 
 
 //now modify that closure and add a function that says hello to the employee name;
@@ -70,6 +84,48 @@ var employeeC = employee("Sara", 150);
 
 // Write your code here .....
 
+function Pet(name){
+
+    var obj = {};
+    obj.name = name ; 
+    obj.addInfo = addInfo ;
+    obj.incAge = incAge ;
+    obj.availability = false ;
+    obj.state = state ;
+    obj.changeState = changeState
+
+    return obj;
+}
+ var addInfo = function(age,owner,gender,species){
+    this.age = age ;
+    this.owner = owner ;
+    this.gender = gender ;
+    this.species = species ;
+    return this 
+ }
+ 
+
+ var incAge = function(x){
+
+    return this.age = this.age + x ;
+
+ }
+ 
+ var state = function(){
+
+    return  this.availability
+ }
+
+var changeState = function(){
+    if (this.availability === false){
+        this.availability = true
+    }
+    else{
+        this.availability = false
+    }
+
+    return this.availability
+}
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
 
@@ -102,6 +158,16 @@ function reduce(array, f, acc) {
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
 // Write your code here .....
+ 
+ function max(array){
+
+    return reduce(array,function(max,element,){
+        if (max < element){
+            max = element;
+        }
+        return max ;
+    })
+ }
 
 
 
@@ -109,6 +175,14 @@ function reduce(array, f, acc) {
 //================================================================================
 /*                              Q4                                              */
 //================================================================================
+
+
+var x = $("button");
+var text = $("input");
+x.click(function(){
+   var j =$("body").innerText = "<ul>fdfdf</ul>"
+   j.ap
+})
 
 // you can only use MDN as a resource in case you need one (https://developer.mozilla.org/en-US/docs/Learn/HTML). 
  // 1-Create a new html file called html_yourname.html and do the following:
