@@ -146,7 +146,7 @@ function changeState (){
 
         that.availibility = true
     }
-    
+
 }
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
@@ -200,6 +200,11 @@ function max(acc, element, i){
 
 // you can only use MDN as a resource in case you need one (https://developer.mozilla.org/en-US/docs/Learn/HTML). 
  // 1-Create a new html file called html_yourname.html and do the following:
+
+
+
+
+
 
  //    a. Change the title to : My easy Assessment.
  //    d. Add horizital line.
