@@ -82,15 +82,53 @@ function listFriends(){
 //lets create a pet class using OOP concept,
 // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
 
+
+function Pet (name){
+    return{
+        name: name
+    }
+}
+
+
 // var pet1 = Pet("doggy");
 
 // b - we need function to add the other info for the pet, called addInfo function. Make sure your functions unneeded memory space
+
+function addInfo (age, owner, gender, species) {
+    var that=this
+    that.age=age;
+    that.owner=owner;
+    that.gender=gender;
+    that.species=species
+}
 
 // pet1.addInfo(age, owner, gender, species);
 
 // c- create another function to increase the pet age by n value.
 
+function increaseAge (n){
+    var that=this;
+    that.age=that.age+n;
+}
+
 // d - create a variable called availability with the default state as false, then create another function to check the pet state, returns true if the pet is available and false if it's not
+
+
+function availibility (){
+    var that=this;
+    that.availibility= false;
+}
+
+function checkAvailibility (){
+
+    var that=this;
+
+    if (that.availibility){
+        return true;
+    }
+
+    return false
+}
 
 // f- in order to change the state of the pet, create a function called changeState, when called it will make the pet avaliablity true,
 //    and when called again it will make it false.
@@ -98,6 +136,18 @@ function listFriends(){
 
 // Write your code here .....
 
+function changeState (){
+
+    var that=this;
+
+    if (that.availibility){
+        that.availibility = false;
+    } else {
+
+        that.availibility = true
+    }
+    
+}
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
 
