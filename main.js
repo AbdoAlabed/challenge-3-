@@ -12,11 +12,42 @@
 //lets make an employee profile using closures
 
 function employee(name, salary) {
+       
+    var friends = [];
+
     return {
         name: name,
-        salary: salary
+        salary: salary,
+
+        sayMyName :  function() {
+            return name
+        },
+
+        sayHello : function () {
+            return "hello" + " " + name;
+        },
+
+        increaseSalary : function (n) {
+            salary += n;
+            return "your salary is " + salary + "$"
+        },
+
+        addFriend : function (obj) {
+
+            var myFriends = obj;
+            friends = myFriends;
+            return "you just became friend with " + myFriends.name;
+        },
+
+        listFriends : function () {
+            console.log (friends)
+            return "you have "+ friends.length + " friends"
+        }
+
     }
 }
+
+
 
 var employeeA = employee("jack", 100);
 var employeeB = employee("Mark", 200);
@@ -69,10 +100,31 @@ var employeeC = employee("Sara", 150);
 
 
 // Write your code here .....
+function Pet (name) {
 
+    var pet = {};
+
+    pet.name = createPet(name);
+    pet.addInfo = addInfo;
+    
+}
+
+var createPet = function (name) {
+    var name = name;
+
+}
+
+var addInfo = function  (age, owner, gender, species) {
+    return {
+        age : age,
+        owner : owner,
+        gender : gender,
+        species : species
+    }
+}
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
-
+//Yes I am
 //=============================================================================
 /*                                  Q3                                       */
 //=============================================================================
@@ -102,6 +154,15 @@ function reduce(array, f, acc) {
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
 // Write your code here .....
+function max () {
+    return reduce (array , function (element){
+        var max = array [0];
+        if (element > max) {
+            max = element
+        }
+        return max;
+    })
+}
 
 
 
