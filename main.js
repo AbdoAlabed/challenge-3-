@@ -12,9 +12,27 @@
 //lets make an employee profile using closures
 
 function employee(name, salary) {
+    var str = 'you just became a friend with '; 
     return {
         name: name,
-        salary: salary
+        salary: salary,
+        sayName: function(){
+            return this.name;
+        },
+        sayHello: function() {
+            return 'hello ' + this.name;
+        },
+        increaseSalary: function(n) {
+            this.salary += n;
+            return 'your salary is ' + this.salary + '$'
+        },
+        listFriends: {},
+        addFriend: function(obj) {
+            this.listFriends[obj.name] = obj.name;
+            str += obj.name;
+            return  str;
+            
+        }
     }
 }
 
@@ -69,10 +87,38 @@ var employeeC = employee("Sara", 150);
 
 
 // Write your code here .....
+function Pet(name){
+    return {
+        addInfo: addInfo,
+        name: name,
+        increaseAge: increaseAge,
+        availability: false,
+        checkAvailability: chackAvailability,
+        changeState: changeState
 
+    }
+}
+function addInfo(age, owner, gender, species){
+    this.age = age;
+    this.owner = owner,
+    this.gender = gender
+    this.species = species
+}
+function increaseAge(n){
+    this.age += n;
+}
 
+function checkAvailability(){
+    return this.availability;
+}
+function changeState(){
+    if(this.availability){
+        return false;
+    }
+    return true;
+}
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
-
+//Yes I am :)
 //=============================================================================
 /*                                  Q3                                       */
 //=============================================================================
@@ -102,7 +148,13 @@ function reduce(array, f, acc) {
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
 // Write your code here .....
-
+function max(arr){
+    return reduce(arr, function(acc, element){
+        if(element > acc) {
+            return element;
+        }return acc;
+    })
+}
 
 
 
