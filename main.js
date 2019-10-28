@@ -11,16 +11,34 @@
 //==============================================================================
 //lets make an employee profile using closures
 
-function employee(name, salary) {
+unction employee (name,salary){
     return {
-        name: name,
-        salary: salary
-    }
-}
+      name: name,
+      salary: salary,
+      friends: 0,
+      sayMyName: function(){
+        return name;
+      },
+      sayHello: function(){
+        return 'hello ' + name;
+      },
+      increaseSalary: function(n){
+        salary += n;
+        return 'Your salary is ' + salary;
+      },
+      addFriend: function(employee){
+        this.friends += 1;
+        return "you just became friend with " + employee.name;
+      },
+      listFriends: function(){
+        return 'You have ' + this.friends + ' friends';
+      }
+    }   
+  }
 
-var employeeA = employee("jack", 100);
-var employeeB = employee("Mark", 200);
-var employeeC = employee("Sara", 150);
+  var employeeA = employee("jack", 100);
+  var employeeB = employee("Mark", 200);
+  var employeeC = employee("Sara", 150);
 
 
 //create a function when invoked returns the name of that employee.
@@ -52,6 +70,47 @@ var employeeC = employee("Sara", 150);
 /*                                  Q2                                       */
 //=============================================================================
 //lets create a pet class using OOP concept,
+
+function Pet(name){
+    var pet = {};
+
+    pet.name = name;
+    pet.availability = false;
+    pet.addInfo = addInfo;
+    pet.incAge = incAge;
+    pet.checkState = checkState;
+    pet.changeState = changeState;
+
+    return pet;
+  }
+
+  function addInfo(age, owner, gender, species){
+    this.age = age;
+    this.owner = owner;
+    this. gender = gender;
+    this.species = species;
+  }
+
+  function incAge(n){
+    this.age += n;
+    return 'The age now ' + this.age;
+  }
+
+  function checkState(){
+    if(this.availability === false)
+      return this.availability + ':  Sorry this pet is not available';
+    else
+      return this.availability + ':  This pet is available, You can take it';
+
+  }
+
+  function changeState(){
+    if(this.availability === false)
+      this.availability = true;
+    else
+      this.availability = false;
+  }
+
 // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
 
 // var pet1 = Pet("doggy");
@@ -103,6 +162,13 @@ function reduce(array, f, acc) {
 
 // Write your code here .....
 
+function max(coll, f){
+  return reduce(coll, function(acc, element, i){
+    if(acc < element)
+      acc = element;
+    return acc;
+  })
+}
 
 
 
@@ -123,6 +189,7 @@ function reduce(array, f, acc) {
  //    f. create an input text and a button called Add.
 
 
+
 // Create css file and link it to your HTML file, and write css code for the following: 
 //     a. Change the background color for the whole page.
 //     b. Change the font family for the header of the page.  
@@ -130,7 +197,15 @@ function reduce(array, f, acc) {
 
 // 2. Connect jQuery library to the HTML file.
 
-// 3. Write javascript function when user type text inside the input text and click the "Add" 
+// 3. Write javascript function when user type text inside the input text and click the "Add"
+function AddItems(){
+  var text = document.getElementVyId('text');     
+  var button = document.getElementVyId('add');    
+
+  var add1 = document.createElement('ul');       
+            
+} 
+
 //     button it will add the text to the ul element.
 
 
