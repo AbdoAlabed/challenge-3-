@@ -10,14 +10,17 @@
 /*                              Q1                                            */
 //==============================================================================
 //lets make an employee profile using closures
-
+/*
 function employee(name, salary) {
     return {
         name: name,
         salary: salary
     }
+
+    
 }
 
+*/
 var employeeA = employee("jack", 100);
 var employeeB = employee("Mark", 200);
 var employeeC = employee("Sara", 150);
@@ -29,17 +32,102 @@ var employeeC = employee("Sara", 150);
 // employeeB.sayMyName(); // "Mark"
 
 
+ 
 //now modify that closure and add a function that says hello to the employee name;
+function employee(name, salary) {
+    var obj = {};
+    obj.name = name;
+    obj.salary = salary;
+
+    return {
+        
+        sayMyName: function(){
+            return obj.name;
+        },
+    
+
+    
+        sayHello : function() {
+            return "hello " + obj.name ;
+        }
+    
+    }
+    return obj;
+}
+var employeeA = employee("jack", 100);
+var employeeB = employee("Mark", 200);
+var employeeC = employee("Sara", 150);
 
 // employeeA.sayHello(); // hello jack
 // employeeB.sayHello(); // hello Mark
 
+
+
 //modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
 //employeeA.increaseSalary(50); // "your salary is 150$"
+function employee(name, salary) {
+    var obj = {};
+    obj.name = name;
+    obj.salary = salary;
 
+    return {
+        
+        sayMyName: function(){
+            return obj.name;
+        },
+    
+
+    
+        sayHello : function() {
+            return "hello " + obj.name ;
+        },
+
+        increaseSalary(value) {
+            obj.salary = obj.salary + value;
+            console.log("your salary is " + obj.salary + "$");
+            
+        }
+    
+    }
+
+    return obj;
+}
 //how about we let jack and mark meet togther!
 //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
+function employee(name, salary) {
+    var obj = {};
+    obj.name = name;
+    obj.salary = salary;
+    
+    return {
+        
+        sayMyName: function(){
+            return obj.name;
+        },
+    
+        sayHello : function() {
+            return "hello " + obj.name ;
+        },
 
+        increaseSalary: function(value) {
+            obj.salary = obj.salary + value;
+            console.log("your salary is " + obj.salary + "$");
+            
+        },
+
+        addfreind: function(object) {
+            var objTwo = {};
+            objTwo = object;
+            var aa  =objTwo["name"];
+            
+            return("you just became freind with " +aa );
+        }
+
+    
+    }
+
+    return obj;
+}
 // employeeA.addFriend(employeeB); // "you just became friend with Mark"
 // employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
 
@@ -53,8 +141,15 @@ var employeeC = employee("Sara", 150);
 //=============================================================================
 //lets create a pet class using OOP concept,
 // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
+function Pet(name) {
+    var obj = {};
+    obj.name = name;
+    obj.returnName = function() {
+        return obj.name;
+        }
 
-// var pet1 = Pet("doggy");
+    }
+var pet1 = Pet("doggy");
 
 // b - we need function to add the other info for the pet, called addInfo function. Make sure your functions unneeded memory space
 
