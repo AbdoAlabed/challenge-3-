@@ -1,0 +1,12 @@
+body {
+	background: blue;
+}
+
+header {
+	font-family: sans-serif;
+}
+
+#text {
+	width: 250px;
+	height: 130px;
+}
