@@ -25,11 +25,19 @@ var employeeC = employee("Sara", 150);
 
 //create a function when invoked returns the name of that employee.
 
+ var  sayMyName = employeeA.name;
+
+
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
 
 
 //now modify that closure and add a function that says hello to the employee name;
+
+function sayHello() {
+    var a;
+    
+};
 
 // employeeA.sayHello(); // hello jack
 // employeeB.sayHello(); // hello Mark
@@ -70,8 +78,23 @@ var employeeC = employee("Sara", 150);
 
 // Write your code here .....
 
+function  pet (name) {
+    return {
+        name : name
+    }
+}
 
+function addInfo(age, owner, gender, species){
+    return {
+        name : name,
+        owner : owner,
+        gender : gender,
+        species : species
+        } 
+} 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+
+//Yes I am
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -103,7 +126,15 @@ function reduce(array, f, acc) {
 
 // Write your code here .....
 
-
+function max(numbers) {
+    return reduce(numbers, function(maxi,number) {
+        if(maxi > number){
+        return maxi;
+         } else { 
+        maxi = number;
+        return number; }   
+    })
+}
 
 
 //================================================================================
