@@ -12,9 +12,40 @@
 //lets make an employee profile using closures
 
 function employee(name, salary) {
+	var salaryBlance = salary
+	var friend = []
     return {
         name: name,
-        salary: salary
+        salary: salary,
+        sayMyName: function(){
+            return name
+        },
+        sayHello: function(){
+        	return "Hello "+ name
+        },
+        increaseSalary: function(n){
+        	salaryBlance += n
+        	return salaryBlance
+        },
+        addFriend: function(obj){
+        	if(friend.indexOf(arguments[0].name) === -1 ){
+        		friend.push(arguments[0].name)
+        	}else {
+        		return " you are already added "
+        	}
+            
+            if(friend.length > 0 ){
+                var result  = friend.join(" and ")
+                return "you just became friend with " + result
+            }else {
+                result = friend.join("")
+                return "you just became friend with " + result
+            }
+        	
+        },
+        listFriends: function(){
+        	return "you have " + friend.length +" friend"
+        }
     }
 }
 
@@ -27,7 +58,7 @@ var employeeC = employee("Sara", 150);
 
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
-
+// done
 
 //now modify that closure and add a function that says hello to the employee name;
 
@@ -62,15 +93,49 @@ var employeeC = employee("Sara", 150);
 
 // c- create another function to increase the pet age by n value.
 
-// d - create a variable called availability with the default state as false, then create another function to check the pet state, returns true if the pet is available and false if it's not
+// d - create a variable called availability with the default state as false,
+// then create another function to check the pet state, returns true if the pet is available and false if it's not
 
 // f- in order to change the state of the pet, create a function called changeState, when called it will make the pet avaliablity true,
 //    and when called again it will make it false.
 
 
 // Write your code here .....
+function Pet(name){
+	var instance = {}
+	instance.name = name 
+	instance.age = 0
+	instance.owner = ""
+	instance.gender = ""
+	instance.species = ""
+	instance.availability = false
+	instance.addInfo = addInfo
+	instance.changeState = changeState
+	instance.check = check
+	
 
-
+	return instance
+}
+var addInfo = function(age, owner, gender, species){
+	this.age = age
+	this.owner = owner
+	this.gender = gender
+	this.species = species
+}
+var increaseAge = function(n){
+	this.age += n 
+	return age
+}
+var check = function (){
+	return this.availability
+}
+var changeState = function(){
+	if(this.availability){
+		this.availability = false
+	}else {
+		this.availability = true
+	}
+}
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
 
 //=============================================================================
@@ -102,6 +167,14 @@ function reduce(array, f, acc) {
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
 // Write your code here .....
+function max(arr){
+	return reduce(arr, function(acc,el){
+		if(el > acc){
+			return el 
+		}
+		return acc;
+	})
+}
 
 
 
