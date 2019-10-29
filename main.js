@@ -12,10 +12,40 @@
 //lets make an employee profile using closures
 
 function employee(name, salary) {
+    var count = 0;
+    var str = "You just became friends with ";
     return {
-        name: name,
-        salary: salary
-    }
+        sayMyName: function () {
+			return name;
+    	},
+        salary: salary,
+    
+        sayHello: function() {
+    		return "hello " + name;
+    	},
+    	increaseSalary: function(n) {
+    		salary = salary + n;
+    		return "your salary is " + salary +"$"
+    	},
+    	
+    	
+    	addFriend: function(obj) {
+ 			var and = " and ";
+ 			count++;
+ 			if (count === 1) {
+ 				str += obj.sayMyName();
+ 				return str;
+ 			} else if (count > 1) {
+ 				str = str + and + obj.sayMyName();
+ 				return str;
+ 			} 
+ 			
+    	},
+    	listFriends: function() {
+    		return "you have " + count + " friends";
+    	}
+
+	}
 }
 
 var employeeA = employee("jack", 100);
@@ -69,10 +99,28 @@ var employeeC = employee("Sara", 150);
 
 
 // Write your code here .....
-
+function Pet(name) {
+	this.name = name;
+	var availability = false;
+	return {
+		addInfo: function(age, owner, gender, species) {
+			this.age = age;
+			this.owner = owner;
+			this.gender = gender;
+			this.species = species;
+		},
+		increaseAge : function(n) {
+			this.age += n;
+		},
+		changeState: function() {
+			availability = !availability;
+			return availability;
+		}
+	}
+}
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
-
+// Yes I'm reading !!!
 //=============================================================================
 /*                                  Q3                                       */
 //=============================================================================
@@ -103,6 +151,14 @@ function reduce(array, f, acc) {
 
 // Write your code here .....
 
+function max(array) {
+	return reduce(array, function(elm, index) {
+		if (elm > acc) {
+			acc = elm;
+		}
+		
+	})
+}
 
 
 
