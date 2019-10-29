@@ -136,10 +136,10 @@ function reduce(array, f, acc) {
 function max(numbers) {
     var max = numbers[0];
     return reduce(numbers, function(acc, elem){
-        if (max[i] < elem[i]){
-           return max[i] = elem[i];
+        if (max< elem){
+           return max = elem;
         }else{
-            return max[i];
+            return max;
         }
     }, 0)
 }
