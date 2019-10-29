@@ -1,0 +1,10 @@
+body {
+  background-color: lightgrey;
+}
+header {
+  font-family: Georgia, serif;
+}
+input[type=text]{
+	width: 80% ;
+	height: 20% ;
+}
