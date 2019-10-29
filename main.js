@@ -12,10 +12,29 @@
 //lets make an employee profile using closures
 
 function employee(name, salary) {
-    return {
-        name: name,
-        salary: salary
-    }
+  return {
+    name: name,
+    salary: salary,
+    frinedsNumber: 0,
+    sayMyName: function() {
+      return name; 
+    },
+    sayHello: function() {
+      return "hello " + name
+    },
+    increaseSalary: function(n) {
+      salary += n
+      return "your salary is " + salary + "$";
+    },
+    addFriend: function(obj) {
+      frinedsNumber += 1;
+      return "you just became friend with " + obj.name;
+    },
+    listFriends: function() {
+      return "you have "+ frinedsNumber +" friends"
+    },
+    
+  }
 }
 
 var employeeA = employee("jack", 100);
@@ -69,9 +88,43 @@ var employeeC = employee("Sara", 150);
 
 
 // Write your code here .....
+function Pet(name) {
+  pet = {};
 
+  pet.name = name;
+  pet.availability = false;
+  pet.addInfo = addInfo;
+  pet.increaseAge = increaseAge;
+  pet.checkState = checkState;
+  pet.changeState = changeState;
+
+  return pet;
+}
+
+var addInfo = function(age, owner, gender, species) {
+  this.age = age;
+  this.owner = owner;
+  this.gender = gender;
+  this.species = species;
+}
+
+var increaseAge = function(n) {
+  this.age += n;
+  return this.age;
+}
+var checkState = function() {
+  return this.availability
+}
+var changeState = function() {
+  if(this.availability) {
+    this.availability = false;
+  } else {
+    this.availability = true
+  }
+}
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+// Yes I am
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -103,6 +156,14 @@ function reduce(array, f, acc) {
 
 // Write your code here .....
 
+function max(numbers) {
+  
+  return reduce(numbers, function(number) {
+    if (number < acc) {
+      return number;
+    }   
+  }, acc);
+}
 
 
 
