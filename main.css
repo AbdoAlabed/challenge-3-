@@ -1,0 +1,17 @@
+
+
+
+
+body{
+	  background-color: lightblue;
+}
+
+#myInfo header{
+	font-family: Georgia, serif;
+}
+
+input{
+	width: 200px ;
+	height: 30px;
+
+}
