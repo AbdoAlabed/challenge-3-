@@ -25,6 +25,11 @@ var employeeC = employee("Sara", 150);
 
 //create a function when invoked returns the name of that employee.
 
+function sayMyName(){
+    var that=this;
+    return that.name
+}
+
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
 
@@ -34,11 +39,30 @@ var employeeC = employee("Sara", 150);
 // employeeA.sayHello(); // hello jack
 // employeeB.sayHello(); // hello Mark
 
+function sayHello(){
+    return "hello " + this.name
+}
+
 //modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
 //employeeA.increaseSalary(50); // "your salary is 150$"
 
+
+function increaseSalary(n){
+
+    this.salary= this.salary+n;
+
+    return "your salary is "+this.salary
+}
+
+
 //how about we let jack and mark meet togther!
 //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
+
+function addFreind(obj){
+    this.freinds = [],
+    this.friends.push(obj.name)
+    return "you just became friend with " + obj.name
+}
 
 // employeeA.addFriend(employeeB); // "you just became friend with Mark"
 // employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
@@ -47,6 +71,10 @@ var employeeC = employee("Sara", 150);
 
 // employeeA.listFriends(); // "you have 2 friends"
 
+function listFriends(){
+    return "you have " + this.friends.length + "frinds"
+}
+
 
 //=============================================================================
 /*                                  Q2                                       */
@@ -54,15 +82,53 @@ var employeeC = employee("Sara", 150);
 //lets create a pet class using OOP concept,
 // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
 
+
+function Pet (name){
+    return{
+        name: name
+    }
+}
+
+
 // var pet1 = Pet("doggy");
 
 // b - we need function to add the other info for the pet, called addInfo function. Make sure your functions unneeded memory space
+
+function addInfo (age, owner, gender, species) {
+    var that=this
+    that.age=age;
+    that.owner=owner;
+    that.gender=gender;
+    that.species=species
+}
 
 // pet1.addInfo(age, owner, gender, species);
 
 // c- create another function to increase the pet age by n value.
 
+function increaseAge (n){
+    var that=this;
+    that.age=that.age+n;
+}
+
 // d - create a variable called availability with the default state as false, then create another function to check the pet state, returns true if the pet is available and false if it's not
+
+
+function availibility (){
+    var that=this;
+    that.availibility= false;
+}
+
+function checkAvailibility (){
+
+    var that=this;
+
+    if (that.availibility){
+        return true;
+    }
+
+    return false
+}
 
 // f- in order to change the state of the pet, create a function called changeState, when called it will make the pet avaliablity true,
 //    and when called again it will make it false.
@@ -70,8 +136,22 @@ var employeeC = employee("Sara", 150);
 
 // Write your code here .....
 
+function changeState (){
+
+    var that=this;
+
+    if (that.availibility){
+        that.availibility = false;
+    } else {
+
+        that.availibility = true
+    }
+
+}
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+
+//Yes I am
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -104,6 +184,14 @@ function reduce(array, f, acc) {
 // Write your code here .....
 
 
+function max(acc, element, i){
+    if (element>acc){
+        return element
+    }
+
+}
+
+
 
 
 //================================================================================
@@ -112,6 +200,11 @@ function reduce(array, f, acc) {
 
 // you can only use MDN as a resource in case you need one (https://developer.mozilla.org/en-US/docs/Learn/HTML). 
  // 1-Create a new html file called html_yourname.html and do the following:
+
+
+
+
+
 
  //    a. Change the title to : My easy Assessment.
  //    d. Add horizital line.
