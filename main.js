@@ -11,10 +11,28 @@
 //==============================================================================
 //lets make an employee profile using closures
 
+
 function employee(name, salary) {
     return {
+
         name: name,
-        salary: salary
+        sayMyName: function() {
+            return name;
+        },
+        sayHello: function() {
+            return "Hello " + name;
+        },
+        salary: salary,
+        increaseSalary: function(amount) {
+            return salary = salary + amount;
+        },
+        addFriend: function(object) {
+            return "you just became friend with "+object.name;
+        }
+        //it should return the list of friends
+        listFriends: function() {
+          return "you have "+ +"friends";
+        } 
     }
 }
 
@@ -53,7 +71,7 @@ var employeeC = employee("Sara", 150);
 //=============================================================================
 //lets create a pet class using OOP concept,
 // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
-
+    
 // var pet1 = Pet("doggy");
 
 // b - we need function to add the other info for the pet, called addInfo function. Make sure your functions unneeded memory space
@@ -70,8 +88,43 @@ var employeeC = employee("Sara", 150);
 
 // Write your code here .....
 
+function Pet(name) {
+  var create = {};
+  var availability = false;
+  create.name = name;
+  create.addInfo = addInfo;
+  create.age = addInfo.age;
+  create.increaseAge = increaseAge;
+  create.check = check;
+  create.changeState = changeState;
+  return create;
+}
+var pet1 = Pet("doggy");
+
+function addInfo(age, owner, gender, species) {
+  var info = {};
+  info.age = age;
+  info.owner = owner;
+  info.gender = gender;
+  info.species = species;
+  return info;
+}
+
+function increaseAge(number) {
+  return age+number;
+   
+}
+
+function check() {
+  return this.availability;
+}
+
+function changeState() {
+  return !this.availability;
+}
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+// Yes I am
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -102,6 +155,15 @@ function reduce(array, f, acc) {
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
 // Write your code here .....
+
+function max(numbers) {
+  return reduce(numbers, function(result, element) {
+    if(element > result) {
+      result = element;
+    }
+    return result;
+  });
+}
 
 
 
@@ -136,3 +198,41 @@ function reduce(array, f, acc) {
 
 
                               //  Good Luck :))
+
+
+html_yourname.html:
+
+
+
+                              <html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>My easy Assessment</title>
+</head>
+<header>HTML is Eazy</header>
+<body>
+  <div id="myInfo">
+  <p>HyperText Markup Language (HTML) is the standard markup language for creating web pages and web applications.</p>
+  <input alt="add your name">
+  <button>add</button>
+  </div>
+</body>
+</html>
+
+
+style.css
+
+body {
+  background-color: blue;
+}
+
+header {
+  font-family: italic;
+}
+
+input {
+  text{
+  width: 22px;
+  height: 34px;
+}
+}
