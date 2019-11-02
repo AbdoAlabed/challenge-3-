@@ -1,3 +1,4 @@
+
 // remember to relax and ask for help when you need it (only from staff)
 // YOU CAN ONLY USE MDN AS A RESOURCE
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript
@@ -10,11 +11,45 @@
 /*                              Q1                                            */
 //==============================================================================
 //lets make an employee profile using closures
+ 
+//helpers
+
+function each(array, f){
+    for(var i = 0; i < array.length; i++){
+        f(array[i], i);
+    }
+}
 
 function employee(name, salary) {
     return {
         name: name,
-        salary: salary
+        salary: salary,
+        sayMyName: function(){
+            return this.name;
+        },
+        sayHello: function(){
+            return 'hello ' + this.name;
+        },
+        increaseSalary: function(n){
+            this.salary = this.salary + n;
+            return 'your salary is '+ this.salary;
+        }, 
+        friends: [],
+        addFriend: function(employee){
+            this.friends.push(employee);
+            var result = '';
+            each(this.friends, function(element, i){
+                if(i === 0){
+                    result += 'you just became friend with ' + element.name;
+                } else {
+                    result += ' and ' + element.name;
+                }
+            });
+            return result;
+        },
+        listFriends: function(){
+            return `you have ${this.friends.length} friends`
+        }
     }
 }
 
@@ -70,8 +105,39 @@ var employeeC = employee("Sara", 150);
 
 // Write your code here .....
 
+function addInfo(age, owner, gender, species){
+    this.age = age;
+    this.owner = owner;
+    this.gender = gender;
+    this.species = species;
+}
+
+function increaseAge(n){
+    this.age += n;
+}
+
+function isAvailable(){
+    return this.availability;
+}
+
+function changeState(){
+    this.availability= !this.availability;
+}
+
+function Pet(name){
+    return {
+        name: name,
+        availability: false,
+        addInfo: addInfo,
+        increaseAge: increaseAge,
+        isAvailable: isAvailable,
+        changeState: changeState
+    }
+}
+
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+//yes I am
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -103,6 +169,14 @@ function reduce(array, f, acc) {
 
 // Write your code here .....
 
+function max(array){
+    return reduce(array, function(acc, element, i){
+        if(element > acc){
+            acc = element;
+        }
+        return acc;
+    });
+}
 
 
 
