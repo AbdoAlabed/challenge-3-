@@ -27,6 +27,9 @@ var employeeC = employee("Sara", 150);
 
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
+sayMyName: function(){
+            return employeeName;
+        },
 
 
 //now modify that closure and add a function that says hello to the employee name;
@@ -34,18 +37,33 @@ var employeeC = employee("Sara", 150);
 // employeeA.sayHello(); // hello jack
 // employeeB.sayHello(); // hello Mark
 
+sayHello: function(){
+            return 'hello'+  employeeName;
+        },
+
 //modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
 //employeeA.increaseSalary(50); // "your salary is 150$"
+increaseSalary: function(n){
+            employeeSalary =  n;
+            return "Your salary is $"+  employeeSalary;
+        },
 
 //how about we let jack and mark meet togther!
 //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
 
 // employeeA.addFriend(employeeB); // "you just became friend with Mark"
 // employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
+addFriend: function(employee){
+            friends.push(employee);
+            return "You just became friends with "+ this.displayFriends();
 
 //modify your closure to tell mark how many friends does he have.
-
-// employeeA.listFriends(); // "you have 2 friends"
+displayFriends: function(){
+            if(friends.length < 1) 
+                return "You have no friends";
+            displayFriends: function(){
+            if(friends.length > 1) 
+                return "You have more than one friends";
 
 
 //=============================================================================
@@ -72,6 +90,19 @@ var employeeC = employee("Sara", 150);
 
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+
+
+// Yes I am
+function makePet(petName){
+    return {
+        name: petName,
+        available: false,
+        ageUp: ageUp,
+        addInfo: addInfo,
+        availablity: availability,
+        toggle: toggle,
+    }
+}
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -102,6 +133,16 @@ function reduce(array, f, acc) {
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
 // Write your code here .....
+function max(numbers) {
+    var max = numbers[0];
+    return reduce(numbers, function(acc, elem){
+        if (max< elem){
+           return max = elem;
+        }else{
+            return max;
+        }
+    }, 0)
+}
 
 
 
@@ -135,4 +176,4 @@ function reduce(array, f, acc) {
 
 
 
-                              //  Good Luck :))
+                              //  Good Luck :)) 
